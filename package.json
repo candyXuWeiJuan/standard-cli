@@ -1,0 +1,49 @@
+{
+	"name": "standard-cli",
+	"version": "1.1.0",
+	"description": "项目规范库",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint-fix": "eslint --fix . --ext .js",
+		"publish.init": "node ./publish/publish.js",
+		"publish.major": "node ./publish/publish.js major",
+		"publish.minor": "node ./publish/publish.js minor",
+		"publish.patch": "node ./publish/publish.js patch"
+	},
+	"bin": {
+		"standard": "bin/index.js"
+	},
+	"keywords": [
+		"cli"
+	],
+	"author": "weijuan.xu",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"@commitlint/cli": "^9.1.2",
+		"@commitlint/config-conventional": "^9.1.2",
+		"chalk": "^4.1.1",
+		"commander": "^7.2.0",
+		"cross-spawn": "^7.0.3",
+		"download": "^8.0.0",
+		"eslint": "^7.29.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
+		"fs-extra": "^10.0.0",
+		"husky": "^4.3.8",
+		"inquirer": "^8.1.1",
+		"lint-staged": "^11.0.0",
+		"path": "^0.12.7",
+		"prettier": "^2.2.1"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,html,css,vue,less,scss}": "prettier  --plugin-search-dir ./node_modules --write"
+	},
+	"_standardInited": true
+}
