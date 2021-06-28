@@ -102,7 +102,7 @@ const npmPublish = () => {
 const publish = async () => {
 	// 更新版本号
 	await updateVersion()
-	// 提交git
+	// 提交git版本
 	await gitSubmit()
 	// 发布
 	// await npmPublish()
