@@ -105,7 +105,7 @@ const publish = async () => {
 	// 提交git版本
 	await gitSubmit()
 	// 发布
-	// await npmPublish()
+	await npmPublish()
 }
 
 publish()
