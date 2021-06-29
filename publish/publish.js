@@ -88,7 +88,7 @@ const npmPublish = () => {
 				process.exit(1)
 			}
 		}
-		const result = spawn.sync('npm', ['publish', '--access', 'public'], {
+		const result = spawn.sync('npm', ['publish'], {
 			stdio: 'inherit',
 		})
 		if (!commdSuccess(result)) {
